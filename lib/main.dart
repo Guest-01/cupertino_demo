@@ -22,9 +22,28 @@ class _MainAppState extends State<MainApp> {
   RadioOptions radio = RadioOptions.one;
   double slider = 0.5;
 
+  TextStyle fontStyle = const TextStyle(
+    fontFamily: 'Pretendard',
+    color: CupertinoColors.label,
+    fontSize: 16,
+  );
+
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
+      theme: CupertinoThemeData(
+        textTheme: CupertinoTextThemeData(
+          textStyle: fontStyle,
+          actionTextStyle: fontStyle,
+          dateTimePickerTextStyle: fontStyle,
+          navActionTextStyle: fontStyle,
+          navLargeTitleTextStyle: fontStyle,
+          navTitleTextStyle: fontStyle,
+          pickerTextStyle: fontStyle,
+          tabLabelTextStyle: fontStyle,
+        ),
+        applyThemeToAll: true,
+      ),
       home: CupertinoPageScaffold(
         navigationBar: const CupertinoNavigationBar(
           middle: Text('Hello Cupertino!'),
